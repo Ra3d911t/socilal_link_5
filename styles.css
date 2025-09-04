@@ -43,12 +43,12 @@ body {
 
 .container {
     text-align: center;
-    padding: 2rem;
+    padding: 2rem 1rem;
     background: white;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    width: 90%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -146,9 +146,8 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
     width: 100%;
-    max-width: 900px;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -156,10 +155,10 @@ h1 {
 .column {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    flex: 1 1 30%;
-    min-width: 150px;
-    max-width: 200px;
+    gap: 1.5rem;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
 }
 
 .social-link {
@@ -171,44 +170,31 @@ h1 {
     border-radius: 12px;
     transition: all 0.3s ease;
     text-align: center;
-    height: 100px; /* Fixed height */
-    min-width: 150px; /* Fixed minimum width */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 110px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .social-link i {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     transition: transform 0.3s ease;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .social-link span {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .social-link:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .social-link:hover i {
-    transform: rotate(360deg);
-}
-
-.social-link span {
-    font-size: 0.9rem;
-    transition: transform 0.3s ease;
-}
-
-.social-link:hover span {
-    transform: translateY(-2px);
+    transform: scale(1.1);
 }
 
 .facebook {
@@ -258,12 +244,12 @@ h1 {
 
 .social-link.phone:hover {
     background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .social-link.phone:hover i {
-    transform: rotate(10deg) scale(1.2);
+    transform: scale(1.1);
 }
 
 /* Hide scrollbar for cleaner look but keep functionality */
@@ -272,14 +258,51 @@ h1 {
 }
 
 /* Responsive adjustments */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .social-links {
+        gap: 1.2rem;
+    }
+    
     .column {
-        flex: 1 1 45%;
-        min-width: 140px;
+        min-width: 180px;
     }
     
     .social-link {
-        min-width: 140px;
+        height: 100px;
+        padding: 1.2rem 0.8rem;
+    }
+    
+    .social-link i {
+        font-size: 1.8rem;
+    }
+    
+    .social-link span {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1.2rem 0.8rem;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .column {
+        width: 100%;
+        max-width: 400px;
+        min-width: auto;
+    }
+    
+    .social-link {
         height: 90px;
         padding: 1rem 0.5rem;
     }
@@ -287,30 +310,23 @@ h1 {
     .social-link i {
         font-size: 1.8rem;
     }
+    
+    .social-link span {
+        font-size: 0.9rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
-    .column {
-        flex: 1 1 100%;
-        max-width: 100%;
+    .social-link {
+        height: 85px;
+        padding: 1rem 0.5rem;
     }
     
-    .social-link {
-        min-width: 100%;
-        height: 85px;
+    .social-link i {
+        font-size: 1.7rem;
     }
-}
-
-@media screen and (max-width: 992px) {
-    .column {
-        flex: 1 1 45%;
-        max-width: 200px;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .column {
-        flex: 1 1 100%;
-        max-width: 100%;
+    
+    .social-link span {
+        font-size: 0.85rem;
     }
 }
