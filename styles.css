@@ -291,20 +291,24 @@ h1 {
     }
     
     .social-links {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 1rem;
+        max-width: 500px;
+        margin: 0 auto;
     }
     
     .column {
-        width: 100%;
-        max-width: 400px;
+        width: calc(50% - 0.5rem);
+        max-width: none;
         min-width: auto;
     }
     
     .social-link {
         height: 90px;
         padding: 1rem 0.5rem;
+        width: 100%;
     }
     
     .social-link i {
@@ -312,21 +316,30 @@ h1 {
     }
     
     .social-link span {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 }
 
 @media screen and (max-width: 480px) {
+    .social-links {
+        gap: 0.8rem;
+        max-width: 400px;
+    }
+    
+    .column {
+        width: calc(50% - 0.4rem);
+    }
+    
     .social-link {
         height: 85px;
-        padding: 1rem 0.5rem;
+        padding: 0.8rem 0.3rem;
     }
     
     .social-link i {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
     }
     
     .social-link span {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 }
